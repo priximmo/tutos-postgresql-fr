@@ -9,7 +9,7 @@ author: xavki
 Sur Debian
 
 ```
-apt-get install portgresql<version>-server
+apt-get install postgresql postgresql-11 postgresql-contrib-11
 ```
 
 
@@ -39,7 +39,7 @@ service postgresql reload
 * binaire principal : /usr/lib/postgresql/10/bin/postgres
 
 <br>
-* binaires : /usr/bin/ (pg_*)
+* binaires pg : /usr/bin/ (pg_*)
 
 
 <br>
