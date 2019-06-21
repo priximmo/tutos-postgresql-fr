@@ -1,11 +1,9 @@
-title: Postgresql
-author: xavki
+%title: Postgresql
+%author: xavki
 
 
 # Postgresql : binaires
 
-
-## Généraux
 
 
 <br> 
@@ -26,7 +24,7 @@ author: xavki
 
 --------------------------------------------------------------------------
 
-## Spécifique Debian
+# Spécifique Debian
 
 
 <br>
@@ -55,7 +53,7 @@ author: xavki
 --------------------------------------------------------------------------
 
 
-## Spécifique Sauvegardes
+# Spécifique Sauvegardes
 
 
 <br>
@@ -64,19 +62,69 @@ author: xavki
 	- différentes format
 	- différents niveau d'objets (cluster/db/table/schéma)
 
+
 <br>
 * pg_dumpall:
 	- sauvegarde intégrale en format binaire
+
 
 <br>
 * pg_restore:
 	- restauration à partir d'une sauvegarde (pg_dumpall)
 
 
+
+-------------------------------------------------------------------------
+
+# Wrappers
+
+
+* équivalent de commndes sql
+
+<br>
+* createdb :
+	- création d'une base de données
+
+
+<br>
+* dropdb :
+	- suppression d'une base de données
+
+
+<br>
+* createuser :
+	- création d'un utilisateur
+
+
+<br>
+* dropuser :
+	- suppression d'un user
+
+
+-------------------------------------------------------------------------
+
+
+# Maintenance
+
+<br>
+* reindexdb :
+	- réindexation des index avec paramètres pour restreindre le périmètre
+
+
+<br>
+* vacuumdb :
+	- tâche de maintenance (ménage)
+
+
+<br>
+* vacuumlo :
+	- suppression de large objects
+
+
 --------------------------------------------------------------------------
 
 
-## Spécifiques système avancées
+# Spécifiques système avancées
 
 
 
