@@ -1,0 +1,73 @@
+%title: Postgresql
+%author: xavki
+
+
+
+# Postgresql : principaux répertoires
+
+
+<br>
+* 2 essentiels
+
+```
+/var/lib/postgresql/11/main/
+/etc/postgresql/11/main/
+```
+
+<br>
+* datas : /var/lib...
+
+* conf : /etc/...
+
+-------------------------------------------------------
+
+# Répertoires
+
+
+<br>
+* base
+		- localisation des bases
+		- template 0 et template 1 : appelé lors de la création de DB
+		- postgresql
+		- classement par oid (tables de correspondance entre oid et objets)
+
+<br>
+* global :
+		- control files : pg_control appelés au démarrage
+		- connaître l'état du moteur
+
+<br>
+* pg_wal : 
+		- write ahead log (WAL)
+		- wal files : défaut 16 Mb
+		- perf = déplacement sur disques performants (ssd)
+		- recovery (checkpoint) : rejoue les fichiers wal
+
+
+------------------------------------------------------------------
+
+
+# Répertoires
+
+
+
+<br>
+* pg_act :
+		- statut des transactions non sérializable commitées
+
+<br>
+* pg_serial :
+		- idem mais sérializable
+
+<br>
+* pg_stat:
+		- statistiques : important pour élaboration des plan de requête
+
+<br>
+* pg_tblspc :
+		- pointeur vers les tablespaces
+
+<br>
+* pg_repslot:
+		- informations sur la réplication par slot
+

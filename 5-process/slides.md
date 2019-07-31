@@ -7,7 +7,7 @@
 
 
 <br>
-* processus père : postmaster
+* processus père : postgresql -D <data_dir> -c <conf_dir>
 
 
 * principe de fork

@@ -14,7 +14,7 @@ psql
 
 Remarque : 
 	- cluster : main
-	- port : 54532
+	- port : 5432
 	- serveur : localhost
 	- user : postgres
 
@@ -23,6 +23,43 @@ Remarque :
 
 ```
 psql -h 127.0.0.1 -p 5432 -U postgres -d postgres
+```
+
+<br>
+* lister les databases
+
+```
+\l+
+```
+
+Rq: + > volumétrie
+
+<br>
+* lister les users
+
+```
+\du
+```
+
+<br>
+* lister les tables
+
+```
+\dt+
+```
+
+<br>
+* lister les schémas
+
+```
+\dn
+```
+
+<br>
+* lister les champs d'une table
+
+```
+\dS <nom_table>
 ```
 
 
