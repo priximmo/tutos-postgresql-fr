@@ -82,7 +82,7 @@ Durable : les données sont dispos en cas de redémarrage
 
 * Rôles/Users : utilisateurs avec login et mot de passe
 
-* Schéma : Namespace ou espace de nom dans une base de données (un group d'éléments)
+* Schéma : Namespace ou espace de nom dans une base de données (un groupe d'éléments)
 
 * Tables : espace de stockage logique dans une base de données
 
