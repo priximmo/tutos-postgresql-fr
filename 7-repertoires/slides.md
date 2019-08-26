@@ -30,6 +30,10 @@
 		- template 0 et template 1 : appelé lors de la création de DB
 		- postgresql
 		- classement par oid (tables de correspondance entre oid et objets)
+		- SELECT relname, oid, relfilenode FROM pg_class;
+		- ex : SELECT relname, oid, relfilenode FROM pg_class where relname='xavier';
+		- ou SELECT pg_relation_filepath('xavier');
+		- Free Space Map (FSM) et Visibility Map (VM) : espace dispo , lien avec Vacuum
 
 <br>
 * global :
@@ -53,7 +57,7 @@
 
 <br>
 * pg_act :
-		- statut des transactions non sérializable commitées
+		- statut des transactions non sérializable commitées (type d'isolation des transactions)
 
 <br>
 * pg_serial :
@@ -61,7 +65,7 @@
 
 <br>
 * pg_stat:
-		- statistiques : important pour élaboration des plan de requête
+		- statistiques : important pour élaboration des plans des requêtes
 
 <br>
 * pg_tblspc :
