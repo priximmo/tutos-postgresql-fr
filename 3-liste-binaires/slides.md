@@ -53,14 +53,14 @@
 --------------------------------------------------------------------------
 
 
-# Spécifique Sauvegardes
+# Spécifiques Sauvegardes
 
 
 <br>
 * pg_dump:
 	- sauvegarde d'une instance
-	- différentes format
-	- différents niveau d'objets (cluster/db/table/schéma)
+	- différents formats : plain text, binaire...
+	- différents niveaux d'objets (cluster/db/table/schéma)
 
 
 <br>
@@ -79,7 +79,7 @@
 # Wrappers
 
 
-* équivalent de commndes sql
+* équivalent de commandes sql
 
 <br>
 * createdb :
@@ -108,7 +108,7 @@
 
 <br>
 * reindexdb :
-	- réindexation des index avec paramètres pour restreindre le périmètre
+	- réindexation des index avec des paramètres pour restreindre le périmètre
 
 
 <br>

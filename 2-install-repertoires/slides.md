@@ -9,7 +9,7 @@ author: xavki
 Sur Debian
 
 ```
-apt-get install postgresql postgresql-11 postgresql-contrib-11
+apt-get install postgresql-11
 ```
 
 
@@ -36,7 +36,7 @@ service postgresql reload
 * datas : /var/lib/postgresql/<version>/<clusterpg> 
 
 <br>
-* binaire principal : /usr/lib/postgresql/10/bin/postgres
+* binaire principal : /usr/lib/postgresql/11/bin/postgres
 
 <br>
 * binaires pg : /usr/bin/ (pg_*)
@@ -47,12 +47,12 @@ service postgresql reload
 
 
 ```
-postgres -D /var/lib/postgresql/10/main -c config_file=/etc/postgresql/10/main/postgresql.conf
-  \_ postgres: 10/main: checkpointer process   
-  \_ postgres: 10/main: writer process   
-  \_ postgres: 10/main: wal writer process   
-  \_ postgres: 10/main: autovacuum launcher process   
-  \_ postgres: 10/main: stats collector process   
-  \_ postgres: 10/main: bgworker: logical replication launcher 
+postgres -D /var/lib/postgresql/11/main -c config_file=/etc/postgresql/11/main/postgresql.conf
+  \_ postgres: 11/main: checkpointer process   
+  \_ postgres: 11/main: writer process   
+  \_ postgres: 11/main: wal writer process   
+  \_ postgres: 11/main: autovacuum launcher process   
+  \_ postgres: 11/main: stats collector process   
+  \_ postgres: 11/main: bgworker: logical replication launcher 
 ```
 

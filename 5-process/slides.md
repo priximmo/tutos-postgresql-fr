@@ -37,7 +37,7 @@
 		- important pour le recovery notamment (coût en perf)
 
 <br>
-* writter : écriture des dirty pages (mémoire) sur data files (dique)
+* background writter : écriture des dirty pages (mémoire) sur data files (dique)
 
 <br>
 * wall writer : écriture de wal buffer sur disque
