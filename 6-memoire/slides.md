@@ -17,7 +17,7 @@
 		- indicent : imprévu > perte de la mémoire / recovery
 
 <br>
-* posgtres scinde en 4 la mémoire disponible :
+* postgres scinde en 4 la mémoire disponible :
 		- shared buffer : mémoire partagée
 		- wal buffers
 		- work mem
