@@ -25,6 +25,7 @@
 
 * on appelle shared memory = shared buffer + wal buffer + c-log-buffer
 
+* aide pour configurer : https://pgtune.leopard.in.ua/
 
 -------------------------------------------------------------------
 

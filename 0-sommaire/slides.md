@@ -5,24 +5,31 @@ author: xavki
 # Postgresql : sommaire
 
 
+<br>
 * 1. Introduction et Présentation
 
 
-* 2. Installation et principaus répertoires
+<br>
+* 2. Installation et principaux répertoires
 
 
+<br>
 * 3. Principaux binaires et outils
 
 
+<br>
 * 4. Processus de démarrage et d'arrêt
 
 
+<br>
 * 5. Différents processus
 
 
+<br>
 * 6. Utilisation de la mémoire
 
 
+<br>
 * 7. Répertoires à connaître
 
 
@@ -32,28 +39,40 @@ author: xavki
 * 8. PG_HBA et autorisations d'accès
 
 
+<br>
 * 9. PSQL - les débuts
 
 
-* 10. Les tables
+<br>
+* 10. Les databases
 
 
-* 11. Les indexes
+<br>
+* 11. Les tables
 
 
-* 12. Les Vues
+<br>
+* 12. Les indexes
 
 
-* 13. Droits : Rôles et Users
+<br>
+* 13. Les Vues
 
 
-* 14. Droits : Schémas
+<br>
+* 14. Droits : Rôles et Users
 
 
-* 15. Droits : Database
+<br>
+* 15. Droits : Schémas
 
 
-* 16. Droits : Tables et Colonnes
+<br>
+* 16. Droits : Database
+
+
+<br>
+* 17. Droits : Tables et Colonnes
 
 
 
@@ -61,35 +80,44 @@ author: xavki
 
 
 
-* 17. Gestion des logs
+<br>
+* 18. Gestion des logs
 
 
-* 18. Monitoring
+<br>
+* 19. Monitoring
 
 
-* 19. Sauvegardes
+<br>
+* 20. Sauvegardes
 
 
-* 20. Restaurations
+<br>
+* 21. Restaurations
 
 
-* 21. Archive log
+<br>
+* 22. Archive log
 
 
-* 22. Pitr
+<br>
+* 23. Pitr
 
 
-* 23. Réplication
+<br>
+* 24. Réplication
 
 
-* 24. Repmgr
+<br>
+* 25. Repmgr
 
 
-* 25. Failover automatique avec repmgr et keepalived
+<br>
+* 26. Failover automatique avec repmgr et keepalived
 
 
-* 26. Failover automatique avec patroni
-
+<br>
+* 27. Failover automatique avec patroni
 
  
 
