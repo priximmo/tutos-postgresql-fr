@@ -25,6 +25,33 @@ Remarque :
 psql -h 127.0.0.1 -p 5432 -U postgres -d postgres
 ```
 
+Rq : --cluster dans le cas de plusieurs cluster ou nom différent
+
+----------------------------------------------------------------------
+
+# Quelques options utiles
+
+<br>
+* -c : passer des commandes à partir de la CLI
+
+<br>
+* -L : logger la CLI
+
+<br>
+* -f : passer des fichiers de scripts sql
+
+<br>
+* -H : export en html
+
+<br>
+* -s : marque un temps d'arrêt à chaque requête (passage de fichier -f)
+
+<br>
+* -q : mode silencieux sans message
+
+<br>
+* -t : uniquement les lignes de résultats
+
 ----------------------------------------------------------------------
 
 # Quelques commandes

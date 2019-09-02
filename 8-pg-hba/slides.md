@@ -21,7 +21,7 @@
 		- reload pour prise en compte
 
 <br>
-* filtre mutlifacteurs :
+* filtre multifacteurs :
 		- type
 		- database
 		- user
@@ -50,7 +50,7 @@
 
 <br>
 * adresse : 
-			- une ip, un maques de sous réseau (CIDR)
+			- une ip, un masques de sous réseau (CIDR)
 			- ipv4 ou ipv6
 
 <br>
