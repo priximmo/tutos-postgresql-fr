@@ -1,13 +1,17 @@
-atitles Postgresql
+%titles Postgresql
 %author: xavki
 
 
-# INDEX : Vues
+# Vues : classique et matérialisée
 
+<br>
 * intérêts :
 		* éviter de refaire régulièrement des requêtes (complexes)
 		* faciliter la gestion des droits pour masquer des colonnes
 
+* vue classique = requête utilisable sous forme de table
+
+<br>
 * création de la table
 
 ```
@@ -22,12 +26,13 @@ INSERT INTO xavier (id,champs1) VALUES (3,'jacques');
 # Vue classique - exemple
 
 
-
+<br>
 * création de la vue
 
 ```
 CREATE VIEW v_compte AS SELECT COUNT(*) FROM xavier;
 CREATE VIEW v_all AS SELECT * FROM xavier;
+\dv
 \dS xavier
 \dS v_xavier
 SELECT * FROM v_compte;
@@ -35,6 +40,7 @@ DELETE FROM xavier WHERE id = 1;
 SELECT * FROM v_compte;
 ```
 
+<br>
 * attention si évolution de la table = recréer la vue
 
 ```
@@ -47,6 +53,7 @@ SELECT * FROM v_all;
 # Vue matérialisée - exemple
 
 
+* vue matérialisée = copie de la table (data) à un instant donné
 
 * création de la vue matérialisée
 

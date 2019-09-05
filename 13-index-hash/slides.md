@@ -50,9 +50,12 @@ CREATE INDEX idx_xavki ON xavier USING HASH (t_champs1);
 
 * le pointeur pointe vers la ligne correspondante
 
-<br>
-* exemple : 
 
+-----------------------------------------------------------
+
+# Hash
+
+<br>
 1. la table
 
 ```
@@ -90,7 +93,6 @@ CREATE INDEX idx_xavki ON xavier USING HASH (t_champs1);
 
 <br>
 4. la recherche
-
 
 	1. je cherche Paul
 	2. hash(Paul) = 2
