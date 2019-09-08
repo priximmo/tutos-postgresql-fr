@@ -90,9 +90,29 @@ where option can be:
 ------------------------------------------------------------------------
 
 
-# Exemple
+# USERS : exemples
 
+
+<br>
+* différents niveaux :
 
 ```
-CREATE USER toto NOLOGIN
+CREATE USER toto NOLOGIN NOCREATEDB;
+CREATE USER tutu WITH ENCRYPTED PASSWORD 'password' LOGIN NOCREATEDB;
+CREATE USER titi LOGIN NOCREATEDB;
+CREATE USER tata LOGIN CREATEDB;
+```
+
+<br>
+* modification d'un role/user :
+
+```
+ALTER USER toto LOGIN;
+```
+
+<br>
+* suppression d'un rôle/user :
+
+```
+DROP USER toto;
 ```
