@@ -1,4 +1,4 @@
-%titles Postgresql
+%title Postgresql
 %author: xavki
 
 

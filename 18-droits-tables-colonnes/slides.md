@@ -2,67 +2,74 @@
 %author: xavki
 
 
-# Vues : classique et matérialisée
-
-<br>
-* intérêts :
-		* éviter de refaire régulièrement des requêtes (complexes)
-		* faciliter la gestion des droits pour masquer des colonnes
-
-* vue classique = requête utilisable sous forme de table
-
-<br>
-* création de la table
-
-```
-CREATE TABLE xavier (id INT, champs1 VARCHAR);
-INSERT INTO xavier (id,champs1) VALUES (1,'pierre');
-INSERT INTO xavier (id,champs1) VALUES (2,'paul');
-INSERT INTO xavier (id,champs1) VALUES (3,'jacques');
-```
-
---------------------------------------------------------
-
-# Vue classique - exemple
+# Droits - tables et colonnes
 
 
 <br>
-* création de la vue
-
-```
-CREATE VIEW v_compte AS SELECT COUNT(*) FROM xavier;
-CREATE VIEW v_all AS SELECT * FROM xavier;
-\dv
-\dS xavier
-\dS v_xavier
-SELECT * FROM v_compte;
-DELETE FROM xavier WHERE id = 1;
-SELECT * FROM v_compte;
-```
+* limitation pour les tables :
+			* SELECT : sélection
+			* INSERT : insertion de lignes
+			* UPDATE : mise àjour de lignes
+			* DELETE : suppression de lignes
+			* TRUNCATE : vidéer la table
+			* REFERENCES : utilisation de la table comme clef
+			* TRIGGER : mise en place de déclencheurs
+			* ALL
 
 <br>
-* attention si évolution de la table = recréer la vue
+* syntax
 
 ```
-ALTER TABLE xavier ADD COLUMN champs2 VARCHAR NOT NULL DEFAULT NOW()::date;
-SELECT * FROM v_all;
+GRANT ALL ON TABLE tbl1 TO <role_ou_public>;
+REVOKE ALL ON TABLE tbl1 FROM <role_ou_public>;
 ```
 
--------------------------------------------------------
+----------------------------------------------------------------
 
-# Vue matérialisée - exemple
+# Droits - tables et colonnes
 
 
-* vue matérialisée = copie de la table (data) à un instant donné
-
-* création de la vue matérialisée
+* exemple
 
 ```
-CREATE MATERIALIZED VIEW vm_xavier AS SELECT * FROM xavier;
-SELECT * FROM vm_xavier;
-DELETE FROM vm_xavier WHERE id = 2;
-SELECT * FROM xavier;
-SELECT * FROM vm_xavier;
+\c xavier xavki
+CREATE TABLE tbl1 (id int,champs1 varchar);
+INSERT INTO tbl1 VALUES (1, 'hello');
+INSERT INTO tbl1 VALUES (2, 'world');
+REVOKE ALL ON TABLE tbl1 FROM toto;
+\c xavier toto
+INSERT INTO tbl1 VALUES (3, 'les xavkistes !!!');
+\c xavier xavki
+GRANT INSERT ON TABLE tbl1 TO xavki;
+\c xavier toto
+INSERT INTO tbl1 (3, 'les xavkistes !!!');
 ```
 
+----------------------------------------------------------------
+
+
+# Droits - tables et colonnes
+
+
+<br>
+* même principe pour les colonnes/champs de tables
+
+* limitations possibles :
+			* SELECT
+			* INSERT
+			* UPDATE
+			* REFERENCES
+
+<br>
+* exemple
+
+```
+\c xavier toto
+SELECT * FROM tbl1;
+\c xavier xavki
+REVOKE ALL ON TABLE tbl1 FROM toto;
+GRANT SELECT(champs1) ON TABLE tbl1 to toto;
+\c xavier toto
+SELECT * FROM tbl1;
+```
 

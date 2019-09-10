@@ -1,11 +1,11 @@
-atitles Postgresql
+%titles Postgresql
 %author: xavki
 
 
 # USERS et ROLES
 
 <br>
-* gestion des droits : databases, schéma, tables, colonnes...
+* gestion des droits : databases, schémas, tables, colonnes...
 
 <br>
 * en postgresql : users = roles
@@ -87,6 +87,7 @@ where option can be:
 * VALID UNTIL : définir une date de péremption/validité
 
 * ADMIN : niveau admin (DBA oracle)
+
 ------------------------------------------------------------------------
 
 

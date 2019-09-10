@@ -75,7 +75,7 @@ SHOW SEARCH_PATH;
 <br>
 * schéma par défaut = public
 
-* aller à dans un autre schéma
+* aller dans un autre schéma
 
 ```
 SET SEARCH_PATH = monschema;
@@ -101,12 +101,9 @@ ALTER USER xavier SET SEARCH_PATH = monschema;
 * grant
 
 ```
-GRANT CREATE ON SCHEMA monschema TO xavier;
+REVOKE ALL ON SCHEMA monschema FROM PUBLIC;
+\c xavki toto
+CREATE TABLE monschema.matable (id int);
+GRANT CREATE ON SCHEMA monschema TO toto;
+CREATE TABLE monschema.matable (id int);
 ```
-
-Rq : possible de faire vers tous les users PUBLIC
-
-
-
-
-

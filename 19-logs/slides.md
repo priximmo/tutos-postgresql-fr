@@ -2,74 +2,92 @@
 %author: xavki
 
 
-# Droits - tables et colonnes
+# Logs
 
 
 <br>
-* limitation pour les tables :
-			* SELECT : sélection
-			* INSERT : insertion de lignes
-			* UPDATE : mise àjour de lignes
-			* DELETE : suppression de lignes
-			* TRUNCATE : vidéer la table
-			* REFERENCES : utilisation de la table comme clef
-			* TRIGGER : mise en place de déclencheurs
-			* ALL
+* à ne pas confondre avec les logfiles (transacations - WAL)
+
+* répertoire : $PG_DATA/pg_log/
 
 <br>
-* syntax
+* attention : plus de log =  moins de perfs
 
-```
-GRANT ALL ON TABLE tbl1 TO <role_ou_public>;
-REVOKE ALL ON TABLE tbl1 FROM <role_ou_public>;
-```
+* postgresql = découplage entre la collecte du log et son écriture
+			* processus = logging collector
 
-----------------------------------------------------------------
+<br>
+* parémétrage dans le /etc/postgresql/../../postgresql.conf
 
-# Droits - tables et colonnes
+* paramètres log_destination : type de logs
+			* stderr
+			* csv
+			* syslog
+			* eventlog
 
+-------------------------------------------------------------------------
 
-* exemple
-
-```
-\c xavier xavki
-CREATE TABLE tbl1 (id int,champs1 varchar);
-INSERT INTO tbl1 (1, 'hello');
-INSERT INTO tbl1 (2, 'world');
-REVOKE ALL ON TABLE tbl1 FROM toto;
-\c xavier toto
-INSERT INTO tbl1 (3, 'les xavkistes !!!');
-\c xavier xavki
-GRANT INSERT ON TABLE tbl1 TO xavki;
-\c xavier toto
-INSERT INTO tbl1 (3, 'les xavkistes !!!');
-```
-
-----------------------------------------------------------------
-
-
-# Droits - tables et colonnes
+# Logs - Paramètres
 
 
 <br>
-* même principe pour les colonnes/champs de tables
+* log_directory = localisation
 
-* limitations possibles :
-			* SELECT
-			* INSERT
-			* UPDATE
-			* REFERENCES
+* log_filename = format des noms des fichiers (standard strftime)
 
 <br>
-* exemple
+* attention : log_truncate écrase les fichiers si ON
+
+<br>
+* information contenue dans les logs = log_statement
+			* attention aux performances
+			* none : erreurs uniquement
+			* ddl : none + erreurs
+			* mod : ddl + changements de datas (insert, update, delete)
+			* all : mod + select
+<br>
+* log_line_prefix = format des lignes de logs
+
+<br>
+* logs concernant d'autres éléments :
+			* log_checkpoints = on
+			* log_connections = on
+			* log_disconnections =on
+			* log_duration = on
+
+--------------------------------------------------------------------------
+
+# Logs - Debug
+
+
+<br>
+* logguer peu pour la performance
+
+<br>
+* ponctuellement pour debugger augmenter les logs
+
+* ajout en fonction du besoin
+
+<br>
+* pour une database :
 
 ```
-\c xavier toto
-SELECT * FROM tbl1;
-\c xavier xavki
-REVOKE ALL ON TABLE tbl1 FROM toto;
-GRANT SELECT(champs1) ON TABLE tbl1 to toto;
-\c xavier toto
-SELECT * FROM tbl1;
+ALTER DATABASE xavier SET log_statement = 'all';
 ```
+
+<br>
+* pour un user :
+
+```
+ALTER USER xavki IN DATABASE xavier SET log_statement = 'all';
+```
+
+<br>
+* logger requêtes lentes
+
+```
+log_min_duration = -1
+```
+
+Rq : -1 = rien sinon en millisecondes / indépendant de log_statement
 
