@@ -17,11 +17,11 @@
 			* processus = logging collector
 
 <br>
-* parémétrage dans le /etc/postgresql/../../postgresql.conf
+* paramétrage dans le /etc/postgresql/../../postgresql.conf
 
 * paramètres log_destination : type de logs
 			* stderr
-			* csv
+			* csvlog
 			* syslog
 			* eventlog
 
