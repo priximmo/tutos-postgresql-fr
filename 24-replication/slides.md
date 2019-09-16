@@ -6,22 +6,26 @@
 
 
 <br>
+* meilleure documentation : 
+https://public.dalibo.com/exports/formation/manuels/formations/dba3/dba3.handout.pdf
+
 * réplication et la gestion du failover (perte d'un noeud et repise de l'activité par le second)
 
 <br>
 * réplications :
 		* physique : à partir des fichiers de jounaux de transactions wal
-		* logique (version >=10) 
+		* logique : abonnements à des slots de l'éditeur/master (version >=10) 
 
 <br>
-* réplications :
-		* symétrique/asynchrone : 
+* symétrique/asynchrone : 
 					* le fait de pouvoir avoir plusieurs maitres (écriture/lecture)
-					* écriture sur slave différée = perte de donénes possible en cas de crash
-    * asymétrique/synchrone :
+					* écriture sur slave différée = perte de données possible en cas de crash
+
+* asymétrique/synchrone :
 					* un master (slave en lecture - Hot StandBy contrairement Warm Standy)
 					* écriture sans délais sur le slave (écriture plus longue car aller/retour)
-    * symétrique/synchrone
+
+* symétrique/synchrone
 
 <br>
 * 2 types de transmission :
@@ -29,7 +33,6 @@
 			* attention : fréquence des journaux et leurs paramètres (archive_timeout)
 		* streaming réplication : groupes d'enregistrement par flux (plus petits donc plus fréquents)
 			* souvent en Hot Standby
-
 
 ------------------------------------------------------------------------------------------------------
 
@@ -61,6 +64,7 @@ listen_addresses = '*'
 wal_level = replica
 max_wal_senders = 10
 wal_keep_segments = 100 			# nb de fichier wal conservé (100 x 16M = 1,6G)
+hot_standby = on
 ```
 
 ------------------------------------------------------------------------------------------------------

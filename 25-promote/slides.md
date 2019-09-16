@@ -47,21 +47,12 @@ Attention : test du master et du slave (désynchronisation)
 
 # Réplication : resynchronisation de l'ancien master
 
-<br>
-* adapter le postgresql.cof
-
-```
-wal_level = replica
-max_wal_senders = 10
-wal_keep_segments = 100
-listen_addresses = '*'
-hot_standby = on
-```
 
 <br>
 * suppression des datas du slave
 
 ```
+service postgresql stop
 rm -rf /var/lib/postgresql/11/main/*
 ```
 
@@ -69,7 +60,7 @@ rm -rf /var/lib/postgresql/11/main/*
 * synchroniser en tant que postgres
 
 ```
-pg_basebackup -h 192.168.60.3 -D /var/lib/postgresql/11/main/ -P -U replication --wal-method=fetch
+pg_basebackup -h 192.168.60.4 -D /var/lib/postgresql/11/main/ -P -U replication --wal-method=fetch
 ```
 
 <br>
@@ -78,7 +69,7 @@ pg_basebackup -h 192.168.60.3 -D /var/lib/postgresql/11/main/ -P -U replication 
 ```
 vim var/lib/postgresql/11/main/recovery.conf
 standby_mode = 'on'
-primary_conninfo = 'host=192.168.60.3 port=5432 user=replication password=replication'
+primary_conninfo = 'host=192.168.60.4 port=5432 user=replication password=replication'
 trigger_file = '/tmp/MasterNow' # ce fichier coupe la réplication et promeut le slave
 ```
 
