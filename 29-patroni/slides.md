@@ -7,6 +7,8 @@
 <br>
 * solution mise au point part Zalendo
 
+https://patroni.readthedocs.io/
+
 * à base de python
 
 * management de postgresql
@@ -83,7 +85,7 @@ vim /etc/patroni.yml
 
 ------------------------------------------------------------------
 
-# POSTGRES - PATRONI
+# POSTGRESQL - PATRONI
 
 
 ```
