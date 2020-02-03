@@ -17,6 +17,10 @@
 Doc : https://public.dalibo.com/exports/formation/manuels/modules/i2/i2.handout.html#copie-physique-%C3%A0-chaud-ponctuelle-avec-pg_basebackup
 
 
+* scheminement
+
+createdb + table + insert >>>> pgbasebackup >>>>>> insert2  >>>>>>>> insert 3
+
 ---------------------------------------------------------------------
 
 # WAL archivage : configuration
@@ -54,6 +58,11 @@ psql jetestbackup -c "INSERT INTO xavki SELECT * FROM GENERATE_SERIES(1,20000);"
 psql jetestbackup -c "\dt+"
 date
 ```
+
+-------------------------------------------------------------------
+
+# PG_BASEBACKUP
+
 
 <br>
 ```
