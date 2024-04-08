@@ -5,11 +5,13 @@
 
 
 <br>
+
 * notion : Point In Time Recovery (PITR)
 
 * sauvegarde physique pg_basebackup + WAL nécessaires
 
 <br>
+
 * fréquence du pg_basebackup / WAL = durée de restauration
 
 * une fois par semaine pg_basebackup
@@ -26,6 +28,7 @@ createdb + table + insert >>>> pgbasebackup >>>>>> insert2  >>>>>>>> insert 3
 # WAL archivage : configuration
 
 <br>
+
 * activation de l'archivage des wal /etc/.../postgresql.conf
 
 ```
@@ -43,6 +46,7 @@ service postgresql restart
 # PG_BASEBACKUP
 
 <br>
+
 * création d'une base :
 
 ```
@@ -50,6 +54,7 @@ createdb jetestbackup
 ```
 
 <br>
+
 * insertion de datas :
 
 ```
@@ -65,6 +70,7 @@ date
 
 
 <br>
+
 ```
 psql -c "select pg_switch_wal();"
 mkdir /tmp/bck/
@@ -73,6 +79,7 @@ ls /tmp/bck
 ```
 
 <br>
+
 * ajout de datas après backup
 
 ```
@@ -100,6 +107,7 @@ Rq : fichiers de la base et les wal séparés
 
 
 <br>
+
 * clean > restauration physique (fichiers)
 
 ```
@@ -109,6 +117,7 @@ tar xvfz /tmp/bck/files.tar.gz -C /var/lib/postgresql/10/main/
 ```
 
 <br>
+
 * création du fichier recovery
 
 ```
